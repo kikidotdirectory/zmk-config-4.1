@@ -17,6 +17,16 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 #define MEH LS(LC(LALT))
 
+// Define mod-morph with a *single* mod trigger for less repetition.
+#define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
+  ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
+                bindings = <BINDING1>, <BINDING2>;)
+
+// Tap: comma | Shift + tap: semicolon
+SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
+// Tap: period | Shift + tap: colon
+SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
+
 / {
     behaviors {
         as: auto_shift {
@@ -196,9 +206,9 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
         base {
             display-name = "Base";
             bindings = <
-                            &kp W           &kp F           &kp P           &kp B                                           &kp M           &kp L           &kp U           &kp Y
-            &kp A           &lhm LCTRL R    &lhm LALT S     &lhm LGUI T     &kp G                                           &kp K           &rhm LGUI N     &rhm LALT E     &rhm LCTRL I    &kp O
-                            &kp V           &kp C           &kp D                                                                           &kp H           AS(COMMA)       AS(DOT)
+                            &kp W           &kp F           &kp P           &kp B                                           &kp J           &kp L           &kp U           &kp Y
+            &kp R           &lhm LCTRL S    &lhm LALT T     &lhm LGUI H     &kp K                                           &kp X           &rhm LGUI N     &rhm LALT A     &rhm LCTRL I    &kp O
+                            &kp C           &kp G           &kp D                                                                           &kp M           &comma_morph    &dot_morph
                                                             &kp LSHFT       &sym_bspc 2 0                   &lt NAV SPACE   &smart_shift
             >;
         };
