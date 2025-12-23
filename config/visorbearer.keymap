@@ -215,7 +215,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
     quick-release;
 };
 
-/ Define mod-morph with a *single* mod trigger for less repetition.
+// Define mod-morph with a *single* mod trigger for less repetition.
 #define SIMPLE_MORPH(NAME, MOD, BINDING1, BINDING2)                            \
   ZMK_MOD_MORPH(NAME, mods = <(MOD_L##MOD | MOD_R##MOD)>;                      \
                 bindings = <BINDING1>, <BINDING2>;)
