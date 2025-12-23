@@ -194,23 +194,19 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
             then-layer = <3>;
         };
     };
-    keymap {
-      compatible = "zmk,keymap";
-        base {
-          display-name = "Base";
-          bindings = <
-//                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
-                    &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y
-//  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-      &hl LGUI R    &hl LALT S    &hl LCTRL T   &hl LSHFT H   &kp K             &kp X         &hr RSHFT N   &hr RCTRL A   &hr RALT I    &hr RGUI O
-//  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
-                    &kp C         &kp G         &kp D                                         &kp M         &comma_morph  &dot_morph
-//                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
-                                                ___           &kp SPACE         &kp E         &sk SHIFT
-//                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
-          >;
-      };
+
+  keymap {
+    compatible = "zmk,keymap";
+      base {
+        display-name = "Base";
+        bindings = <
+                  &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y
+    &hl LGUI R    &hl LALT S    &hl LCTRL T   &hl LSHFT H   &kp K             &kp X         &hr RSHFT N   &hr RCTRL A   &hr RALT I    &hr RGUI O
+                  &kp C         &kp G         &kp D                                         &kp M         &comma_morph  &dot_morph
+                                              &none         &kp SPACE         &kp E         &sk SHIFT
+        >;
     };
+  };
 };
 
 &lt {
