@@ -31,8 +31,8 @@ SIMPLE_MORPH(comma_morph, SFT, &kp COMMA, &kp SEMICOLON)
 SIMPLE_MORPH(dot_morph, SFT, &kp DOT, &kp COLON)
 
 /* Homerow mods */
-#define KEYS_L LT0 LT1 LT2 LT3 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3 LB4
-#define KEYS_R RT0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3 RB4
+#define KEYS_L LT0 LT1 LT2 LT3 LM0 LM1 LM2 LM3 LM4 LB1 LB2 LB3
+#define KEYS_R RT0 RT1 RT2 RT3 RM0 RM1 RM2 RM3 RM4 RB1 RB2 RB3
 #define THUMBS LH1 LH0 RH0 RH1
 
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS)                                 \
@@ -155,6 +155,20 @@ MAKE_HRM(hr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
       >;
     };
 
+  base {
+    display-name = "name;"
+    bindings = <
+//                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
+                    ___           ___           ___           ___               ___           ___           ___           ___
+//  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
+      ___           ___           ___           ___           ___               ___           ___           ___           ___           ___
+//  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
+                    ___           ___           ___                                           ___           ___           ___
+//                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
+                                                ___           ___               ___           ___
+      //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
+          >;
+        };
         nav {
             display-name = "Nav";
             bindings = <
