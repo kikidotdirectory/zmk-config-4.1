@@ -150,7 +150,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         bindings = <&kp>, <&kp>;
       };
 
-      lhm: left_homerow_mods {
+      hl: left_homerow_mods {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "balanced";
@@ -161,7 +161,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         hold-trigger-key-positions = <5 6 7 8 9 15 16 17 18 19 24 25 26 27 28 29 30 31>;
       };
 
-      rhm: right_homerow_mods {
+      hr: right_homerow_mods {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
         flavor = "balanced";
@@ -190,7 +190,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
 //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
                     &kp W         &kp F         &kp P         &kp B             &kp J         &kp L         &kp U         &kp Y
 //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-      &kp R         &lhm LCTRL S  &lhm LALT T  &lhm LGUI H    &kp K             &kp X         &rhm LGUI N   &rhm LALT A   &rhm LCTRL I  &kp O
+      &kp R         &hl LCTRL S   &hl LALT T   &hl LGUI H    &kp K              &kp X         &hr LGUI N    &hr LALT A    &hr LCTRL I   &kp O
 //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                     &kp C         &kp G        &kp D                                          &kp M        &comma_morph  &dot_morph
 //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
