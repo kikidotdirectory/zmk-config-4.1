@@ -20,6 +20,8 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define ADJ  3
 #define FNC  4
 
+#define QUICK_TAP_MS 175
+
 #define XXX &none
 #define ___ &trans
 
