@@ -23,6 +23,7 @@ ZMK_APPLY_MATRIX_TRANSFORM(visorbearer_13332_transform)
 #define XXX &none
 #define ___ &trans
 
+/* CUSTOM BEHAVIORS */
 #define AS(keycode) &as LS(keycode) keycode     // Autoshift Macro
 #define MEH LS(LC(LALT))
 
@@ -43,10 +44,12 @@ SIMPLE_MORPH(rpar_morph, SFT, &kp RPAR, &kp GT)
 
 // Tap: backspace | Shift + tap: delete
 SIMPLE_MORPH(bksp_del, SFT, &kp BACKSPACE, &kp DELETE)
+
 ZMK_MACRO(qu,
   bindings = <&kp Q &kp U>;
 )
 
+/* COMBOS */
 /*    VISORBEARER KEY MATRIX / LAYOUT MAPPING
       ╭──────────────────┬──────────────────╮
       │ LT3 LT2 LT1 LT0  │  RT0 RT1 RT2 RT3 │
@@ -197,7 +200,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
               &kp R         &hl LCTRL S   &hl LALT T   &hl LGUI H    &kp K              &kp X         &hr LGUI N    &hr LALT A    &hr LCTRL I   &kp O
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
-                            &kp C         &kp G        &kp D                                          &kp M        &comma_morph  &dot_morph
+                            &kp C         &kp G        &kp D                                          &kp M         &comma_morph  &dot_morph
         //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
                                                         &kp LSHFT     &lt NAV SPACE     &lt NROW E    &smart_shift
         //                                            ╰─────────────┴─────────────╯   ╰─────────────┴─────────────╯
