@@ -65,11 +65,6 @@ ZMK_MACRO(qu,
 MAKE_HRM(hl, &kp, &kp, KEYS_R THUMBS) // Left-hand HRMs.
 MAKE_HRM(hr, &kp, &kp, KEYS_L THUMBS) // Right-hand HRMs.
 
-// Hack: Make HRM combos tap-only (cf, ZMK issue #544).
-#define ZMK_COMBO_8(NAME, TAP, POS, LAYERS, COMBO_MS, IDLE_MS, HOLD, SIDE)     \
-  MAKE_HRM(hm_combo_##NAME, &kp, TAP, SIDE THUMBS)                             \
-  ZMK_COMBO_6(NAME, &hm_combo_##NAME HOLD 0, POS, LAYERS, COMBO_MS, IDLE_MS)
-
 /* COMBOS */
 /*    VISORBEARER KEY MATRIX / LAYOUT MAPPING
       ╭──────────────────┬──────────────────╮
@@ -117,7 +112,7 @@ ZMK_COMBO(apos,  &kp APOS,         RT3 RT2,     APT NROW      NAV     , COMBO_TE
 ZMK_COMBO(grave, &kp GRAVE,        RT2 RT1,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
 ZMK_COMBO(enter_r, &hr RC(RGUI) ENTER,RM3 RM1,     APT NROW NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(bspc_r,  &bksp_del, RM3 RM2 RM1,        APT NROW  NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW, LS(LC(LALT)), KEYS_L)
+ZMK_COMBO(bspc_r,  &hr RC(RS(RGUI)) BACKSPACE, RM3 RM2 RM1,        APT NROW  NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW, LS(LC(LALT)), KEYS_L)
 
 ZMK_COMBO(fslash,&kp SLASH,    RB3 RB2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(bslash,   &kp BSLH,  RB2 RB1,     APT NROW     NAV      , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
