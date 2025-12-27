@@ -106,8 +106,11 @@ ZMK_COMBO(esc,   &kp ESCAPE,   LT3 LT1,         APT NAV NROW          , COMBO_ID
 
 // Combos overlapping HRMs are set up as hold-taps themselves to allow for instantaneous
 // chording of mods.
-ZMK_COMBO(enter_l,&hl LA(LC(LGUI)) ENTER ,LM3 LM2 LM1, APT NAV NROW      , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(tab,   &hl LC(LGUI) TAB,  LM3 LM1,     APT NAV NROW    , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(enter_l,&hl LA(LC(LGUI)) ENTER ,LM3 LM2 LM1, APT NAV NROW      , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(tab,   &hl LC(LGUI) TAB,  LM3 LM1,     APT NAV NROW    , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+
+ZMK_COMBO(lpar_morph,   &lpar_morph,  LM2 LM1,     APT NAV NROW    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(lbracket,   &hl LA(LCTL) LBKT ,  LM3 LM2,     APT NAV NROW    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(q,     &kp Q,            LB3 LB2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(boot,  &bootloader,      LM4 LB3 LB2, APT                   , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
@@ -118,8 +121,10 @@ ZMK_COMBO(redo,  &kp LS(LG(Z)),    LB2 LB1,                   NAV     , COMBO_TE
 ZMK_COMBO(nrow,  &mo NROW,         LH1 LH0,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 /* Vertical combos - left hand */
-ZMK_COMBO(lbkt,  &kp LBKT,         LT2 LM2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(lpar,  &lpar_morph,      LT1 LM1,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
+ZMK_COMBO(at, &kp AT, LT3 LM3, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(dllr, &kp DLLR, LT2 LM2, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(percent, &kp PERCENT, LT1 LM1, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(hash, &kp HASH, LT0 LM0, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Horizontal combos - right hand */
 ZMK_COMBO(apos,  &kp APOS,         RT3 RT2,     APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
@@ -128,13 +133,17 @@ ZMK_COMBO(grave, &kp GRAVE,        RT2 RT1,     APT NROW      NAV     , COMBO_TE
 ZMK_COMBO(enter_r, &hr RC(RGUI) ENTER,RM3 RM1,     APT NROW NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(bksp_r,  &hr RC(RA(RGUI)) BACKSPACE, RM3 RM2 RM1,        APT NROW  NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 
+ZMK_COMBO(rpar_morph,   &rpar_morph,  RM2 RM1,     APT NAV NROW    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(rbracket,   &hr RA(RCTL) RBKT ,  RM3 RM2,     APT NAV NROW    , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+
 ZMK_COMBO(fslash,&kp SLASH,    RB3 RB2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(bslash,   &kp BSLH,  RB2 RB1,     APT NROW     NAV      , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 /* Vertical combos - right hand */
-ZMK_COMBO(rbkt,  &kp RBKT,     RT2 RM2,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
-
+ZMK_COMBO(star, &kp STAR, LT3 LM3, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(amps, &kp AMPS, LT2 LM2, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(caret, &kp CARET, LT1 LM1, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(excl, &kp EXCL, LT0 LM0, APT NROW, COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 
 / {
     behaviors {
@@ -243,7 +252,7 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         display-name = "Navigation";
         bindings = <
         //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
-                            &kp LS(TAB)   &tabswapper   &swapper      ___               ___           ___           ___           ___
+                      &mt LSHIFT LS(TAB)  &tabswapper   &swapper      ___               ___           ___           ___           ___
         //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
               &kp LEFT      &kp DOWN      &kp UP        &kp RIGHT     ___               ___           ___           ___           ___           ___
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
@@ -258,9 +267,9 @@ ZMK_COMBO(rpar,  &rpar_morph,  RT1 RM1,         APT NROW      NAV     , COMBO_TE
         display-name = "NRow";
         bindings = <
         //                ╭─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────╮
-                            &kp AT        &kp HASH      &kp DLLR      &kp UNDER         &kp EQUAL     &kp CARET     &kp AMPS      &kp STAR
+                            XXX           &kp UNDER     &kp MINUS     XXX               XXX           &kp PLUS      &kp EQUAL     XXX
         //  ╭─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────╮
-              &hl LGUI N1   &hl LALT N2   &hl LCTRL N3  &hl LSHFT N4  &kp MINUS         &kp PLUS      &hr RSHFT N6  &hr RCTRL N7  &hr RALT N8   &hr RGUI N9
+              &hl LGUI N1   &hl LALT N2   &hl LCTRL N3  &hl LSHFT N4  XXX               XXX           &hr RSHFT N6  &hr RCTRL N7  &hr RALT N8   &hr RGUI N9
         //  ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯   ╰─────────────┼─────────────┼─────────────┼─────────────┼─────────────╯
                             &kp DOT       &kp PERCENT   &kp N5                                        ___           ___           ___
         //                ╰─────────────┼─────────────┼─────────────┼─────────────╮   ╭─────────────┼─────────────┼─────────────┼─────────────╯
