@@ -108,8 +108,8 @@ ZMK_COMBO(esc,          &kp ESCAPE,            LT3 LT1,     APT NAV NROW        
 // chording of mods.
 ZMK_COMBO(enter_l,      &hl LA(LC(LGUI))ENTER, LM3 LM2 LM1, APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
 ZMK_COMBO(tab,          &hl LC(LGUI) TAB,      LM3 LM1,     APT NAV NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(qu,           &qu,                   LM2 LM1,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
-ZMK_COMBO(v,            &hl LA(LCTL) V,        LM3 LM2,     APT                   , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
+ZMK_COMBO(qu,           &qu,                   LM2 LM1,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
+ZMK_COMBO(v,            &hl LA(LCTL) V,        LM3 LM2,     APT                   , COMBO_TERM_FAST, COMBO_IDLE_FAST)
 
 ZMK_COMBO(equal,        &kp EQUAL,             LB3 LB2,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_SLOW)
 ZMK_COMBO(minus,        &kp MINUS,             LB2 LB1,     APT     NROW          , COMBO_TERM_SLOW, COMBO_IDLE_FAST)
